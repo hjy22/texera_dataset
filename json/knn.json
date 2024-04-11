@@ -1,0 +1,151 @@
+{
+  "operators": [
+    {
+      "operatorID": "CSVFileScan-operator-4ecf7f5d-7e7f-4d25-84d2-80e7d813fd1c",
+      "operatorType": "CSVFileScan",
+      "operatorVersion": "20d646aec2cb04a8939a576bc041e10d9002343f",
+      "operatorProperties": {
+        "fileEncoding": "UTF_8",
+        "customDelimiter": ",",
+        "hasHeader": true,
+        "fileName": "C:\\Users\\bgot\\Documents\\iris.csv",
+        "limit": null,
+        "offset": null
+      },
+      "inputPorts": [],
+      "outputPorts": [
+        {
+          "portID": "output-0",
+          "displayName": "",
+          "allowMultiInputs": false,
+          "isDynamicPort": false
+        }
+      ],
+      "showAdvanced": false,
+      "isDisabled": false,
+      "customDisplayName": "CSV File Scan",
+      "dynamicInputPorts": false,
+      "dynamicOutputPorts": false
+    },
+    {
+      "operatorID": "KNNTrainer-operator-e35060af-49bf-49ef-b4e5-366a596dfec2",
+      "operatorType": "KNNTrainer",
+      "operatorVersion": "dc1e5ec6d2dfd54b70bf257f5f6d6ec56d82789b",
+      "operatorProperties": { "label": "variety", "k": 5 },
+      "inputPorts": [
+        {
+          "portID": "input-0",
+          "displayName": "",
+          "allowMultiInputs": false,
+          "isDynamicPort": false,
+          "dependencies": []
+        }
+      ],
+      "outputPorts": [
+        {
+          "portID": "output-0",
+          "displayName": "",
+          "allowMultiInputs": false,
+          "isDynamicPort": false
+        }
+      ],
+      "showAdvanced": false,
+      "isDisabled": false,
+      "customDisplayName": "KNNtrainer",
+      "dynamicInputPorts": false,
+      "dynamicOutputPorts": false
+    },
+    {
+      "operatorID": "ApplyModel-operator-92f832ef-e265-4824-9eda-00169f95376f",
+      "operatorType": "ApplyModel",
+      "operatorVersion": "N/A",
+      "operatorProperties": {
+        "label": "variety",
+        "outputColumns": [
+          { "attributeName": "y_pred", "attributeType": "string" }
+        ]
+      },
+      "inputPorts": [
+        {
+          "portID": "input-0",
+          "displayName": "tuples",
+          "allowMultiInputs": true,
+          "isDynamicPort": false,
+          "dependencies": [{ "id": 1, "internal": false }]
+        },
+        {
+          "portID": "input-1",
+          "displayName": "model",
+          "allowMultiInputs": true,
+          "isDynamicPort": false,
+          "dependencies": []
+        }
+      ],
+      "outputPorts": [
+        {
+          "portID": "output-0",
+          "displayName": "",
+          "allowMultiInputs": false,
+          "isDynamicPort": false
+        }
+      ],
+      "showAdvanced": false,
+      "isDisabled": false,
+      "customDisplayName": "Apply Models",
+      "dynamicInputPorts": false,
+      "dynamicOutputPorts": false
+    }
+  ],
+  "operatorPositions": {
+    "CSVFileScan-operator-4ecf7f5d-7e7f-4d25-84d2-80e7d813fd1c": {
+      "x": 284,
+      "y": 260
+    },
+    "KNNTrainer-operator-e35060af-49bf-49ef-b4e5-366a596dfec2": {
+      "x": 698,
+      "y": 120
+    },
+    "ApplyModel-operator-92f832ef-e265-4824-9eda-00169f95376f": {
+      "x": 916,
+      "y": 172
+    }
+  },
+  "links": [
+    {
+      "linkID": "730766d0-5153-434b-82bc-d55016c739ba",
+      "source": {
+        "operatorID": "CSVFileScan-operator-4ecf7f5d-7e7f-4d25-84d2-80e7d813fd1c",
+        "portID": "output-0"
+      },
+      "target": {
+        "operatorID": "KNNTrainer-operator-e35060af-49bf-49ef-b4e5-366a596dfec2",
+        "portID": "input-0"
+      }
+    },
+    {
+      "linkID": "d88a9f5f-57eb-4d49-83d9-157adfc4fbb1",
+      "source": {
+        "operatorID": "KNNTrainer-operator-e35060af-49bf-49ef-b4e5-366a596dfec2",
+        "portID": "output-0"
+      },
+      "target": {
+        "operatorID": "ApplyModel-operator-92f832ef-e265-4824-9eda-00169f95376f",
+        "portID": "input-1"
+      }
+    },
+    {
+      "linkID": "a9d5dd35-133f-4274-9060-b3157c1c7da0",
+      "source": {
+        "operatorID": "CSVFileScan-operator-4ecf7f5d-7e7f-4d25-84d2-80e7d813fd1c",
+        "portID": "output-0"
+      },
+      "target": {
+        "operatorID": "ApplyModel-operator-92f832ef-e265-4824-9eda-00169f95376f",
+        "portID": "input-0"
+      }
+    }
+  ],
+  "groups": [],
+  "breakpoints": {},
+  "commentBoxes": []
+}

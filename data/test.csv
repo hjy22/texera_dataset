@@ -1,0 +1,6 @@
+geo_tag.cityName,geo_tag.countyID,geo_tag.countyName,geo_tag.stateID,geo_tag.stateName
+Philadelphia,42101,Philadelphia,42,Pennsylvania
+Los Angeles,6037,Los Angeles,6,California
+Plantation,12011,Broward,12,Florida
+Agoura Hills,6037,Los Angeles,6,California
+Atlanta,13121,Fulton,13,Georgia
