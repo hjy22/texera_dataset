@@ -208,7 +208,7 @@ There are two ways to pass the parameter to the model, user-define or optimizati
     
 - **Value of degree to consider (optional)**
     
-    Select the degree of the polynomial kernel function (‘poly’).
+    Select the degree of the ‘poly’ kernel function.
     
 - **Value of gamma to consider (optional)**
     
