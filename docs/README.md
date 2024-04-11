@@ -121,3 +121,107 @@ The schema from input port need to include the metrics calculated by scorer oper
 All attributes from the input port will be transmitted to the output port.   
 The user selects a metric from the input datasets, and optimal models are chosen based on which prediction yields superior performance. Evaluation of performance is conducted using the metric selected by the user from the input schema. The output will consist of the filtered result based on the minimum or maximum value among the chosen metric.
 
+## K-Nearest Neighbor Trainer
+
+This operator is used to train the dataset in KNN model. There are two modes for this operator, which are KNN classifier and regressor, and they have same input ports, output ports, and parameter.  This operator aims to train the model, and pass the model information to the next operator.
+
+### **Input port**
+
+**Dataset**
+
+Training dataset
+
+**Parameter**
+
+Parameter of model
+
+### **Output port**
+
+**Table**
+
+Concat the dataset and model information in binary form
+
+### **Parameters**
+
+There are two ways to pass the parameter to the model, user-define or optimization. 
+
+- **Use optimization**
+    
+    Check the way passing the parameters
+    
+- **Column with class labels**
+    
+    Select column to be used as classification/regressor attribute.
+    
+- **Columns with features**
+    
+    Select column to be used as features
+    
+- **Number of neighbors to consider (k)**
+    
+    Select the number of nearest neighbors used to classify a new instance.
+    
+
+## Support Vector Machine
+
+This operator is used to train the dataset in SVM model. There are two modes for this operator, which are SVM classifier and regressor, and they have same input ports, output ports, and parameter.  This operator aims to train the model, and pass the model information to the next operator.
+
+### **Input port**
+
+**Dataset**
+
+Training dataset
+
+**Parameter**
+
+Parameter of model
+
+### **Output port**
+
+**Table**
+
+Concat the dataset and model information in binary form
+
+### **Parameters**
+
+There are two ways to pass the parameter to the model, user-define or optimization. 
+
+- **Use optimization**
+    
+    Check the way passing the parameters
+    
+- **Column with class labels**
+    
+    Select column to be used as classification/regressor attribute.
+    
+- **Columns with features**
+    
+    Select column to be used as features
+    
+- **Value of regularization parameter to consider (c)**
+    
+    Select the number of regularization parameter used to classify a new instance.
+    
+- **Kernel type**
+    
+    There are a number of kernels to choose from. Each kernel has its own parameters, which appear in the configuration dialog just under the kernel.
+    
+- **Value of degree to consider (optional)**
+    
+    Select the degree of the polynomial kernel function (‘poly’).
+    
+- **Value of gamma to consider (optional)**
+    
+    Select the gamma of the ‘rbf’, ‘poly’ and ‘sigmoid’ kernel function.
+    
+- **Value of coef0 to consider (optional)**
+    
+    Select the coef0 of the ‘poly’ and ‘sigmoid’ kernel function.
+    
+
+| Kernel type | degree | gamma | coef |
+| --- | --- | --- | --- |
+| linear |  |  |  |
+| poly | Y | Y | Y |
+| rbf |  | Y |  |
+| sigmoid |  | Y | Y |
