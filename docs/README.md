@@ -82,26 +82,26 @@ If you choose a column named A, this operator will create a column called A_to_n
 
 ## Apply Model
 
-This operator is used to apply trained model to new datasets.
-A model is first trained on a training dataset by another Operator, which is often a learning algorithm implemented by sci-kit learn and whose name ends with trainer. Afterwards, this model can be applied on another datasets. Usually, the goal is to get a prediction on unseen data.
-The testing dataset upon which the model is applied, has to be compatible with the Attributes of the model. This means that the testing dataset has to include the attributes used to train this model in the previous trainer operator.       
+This operator is used to apply trained model to new datasets.  
+A model is first trained on a training dataset by another Operator, which is often a learning algorithm implemented by sci-kit learn and whose name ends with trainer. Afterwards, this model can be applied on another datasets. Usually, the goal is to get a prediction on unseen data.  
+The testing dataset upon which the model is applied, has to be compatible with the Attributes of the model. This means that the testing dataset has to include the attributes used to train this model in the previous trainer operator.         
 
 
 ### Input
 #### Model
 Trained by upstream trainer
-The model was trained by scikit-learn and saved with pickle
-Including information of the features that used to train the model in column “features”
-Including the parameter of the model in column “para”
+The model was trained by scikit-learn and saved with pickle.  
+Including information of the features that used to train the model in column “features”  
+Including the parameter of the model in column “para”.  
 
 #### Dataset
-The testing dataset that will be performed prediction on with the given model.
-The testing dataset has to include the attributes used to train this model.
-
+The testing dataset that will be performed prediction on with the given model.  
+The testing dataset has to include the attributes used to train this model.  
+ 
 
 ### Output
 
-All the attributes from model input port will be passed to output port
-The predicted value will be in the output port, the name of this attribute can be assigned by the user, and the default value will be “y_pred”.
-If the user chooses “Ground Truth In Datasets”, the ground truth values will be passed to the output port. 
-If the user chooses “Predict Probability For Each Class”, the model will predict the probability of one dataset belonging to each class. And the name of this attribute can be assigned by the user, and the default value will be “y_prob” (not apply to regression model)
+All the attributes from model input port will be passed to output port.  
+The predicted value will be in the output port, the name of this attribute can be assigned by the user, and the default value will be “y_pred”.  
+If the user chooses “Ground Truth In Datasets”, the ground truth values will be passed to the output port.   
+If the user chooses “Predict Probability For Each Class”, the model will predict the probability of one dataset belonging to each class. And the name of this attribute can be assigned by the user, and the default value will be “y_prob”. (not apply to regression model)  
