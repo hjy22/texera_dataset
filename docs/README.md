@@ -16,7 +16,11 @@ More details about [Confusion Matrix](https://scikit-learn.org/stable/auto_examp
 | Actual Value    | The column of ground truth.                 |
 | Predicted Value | The attribute of the predicted value column |
 
-### Output
+### Input Port
+
+Input one model with the predicted value attribute.
+
+### Output Port
 
 A visualization of Confusion Matrix.
 
@@ -39,7 +43,11 @@ More details about [ROC](https://scikit-learn.org/stable/auto_examples/model_sel
 | Actual Value                  | The column of ground truth.                     |
 | Predicted Probabilities Value | The attribute of the probabilities value column |
 
-### Output
+### Input Port
+
+Input one model with the predicted probabilities attribute.
+
+### Output Port
 
 A visualization of ROC.
 
@@ -47,11 +55,9 @@ A visualization of ROC.
 
 In machine learning, converting strings into enumerated types (numerical values) through a process often referred to as encoding is crucial for several reasons:
 
-1. **Algorithm Compatibility**: Most machine learning algorithms are designed to operate on numerical data, meaning they require inputs to be in numerical form. String or textual data often contain categorical information (e.g., gender, country) that is incompatible for direct use in algorithms because these algorithms cannot perform mathematical operations on non-numeric data.
-2. **Data Scaling**: Converting strings to numbers allows for data to be scaled (or normalized), which is crucial for many algorithms. For instance, when using distance-based algorithms (like K-Nearest Neighbors or Linear Regression), the scale of different features can greatly affect model performance. Through encoding and scaling, all features are transformed into numerical forms that can be compared against each other.
-3. **Feature Representation**: Some encoding techniques, such as One-Hot Encoding, help algorithms better understand and differentiate between categories by converting each category into a unique binary vector. This representation eliminates any assumed ordinal relationship between categories, providing a clear way to distinguish between them.
-4. **Efficiency**: Transforming textual data into enumerated types also increases processing efficiency. Numerical data typically require less storage space than string data and are more computationally efficient to process.
-5. **Model Performance**: Proper data preprocessing and encoding strategies can significantly improve model performance. By converting strings to numbers, models can more accurately capture patterns in the data, often leading to better predictive outcomes.
+1. **Algorithm Compatibility**: Most machine learning algorithms are designed to operate on numerical data, meaning they require inputs to be in numerical form. String or textual data often contain categorical information (e.g., gender, country) that is incompatible with direct use in algorithms because these algorithms cannot perform mathematical operations on non-numeric data.
+2. **Efficiency**: Transforming textual data into enumerated types also increases processing efficiency. Numerical data typically require less storage space than string data and are more computationally efficient to process.
+3. **Model Performance**: Proper data preprocessing and encoding strategies can significantly improve model performance. By converting strings to numbers, models can more accurately capture patterns in the data, often leading to better predictive outcomes.
 
 For example: we assign a unique integer to each category. The encoding might look like this:
 
@@ -75,6 +81,10 @@ So, this operator is used to do Encoding.
 | ------ | ---------------------------------------- |
 | Column | Select some columns you want to encoding |
 
-### Output
+### Input Port
+
+Input a dataset.
+
+### Output Port
 
 If you choose a column named A, this operator will create a column called A_to_number, and output the encoding result in this new column. Other columns will not make any changes.
