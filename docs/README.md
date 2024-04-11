@@ -235,3 +235,13 @@ There are two ways to pass the parameter to the model, user-define or optimizati
 | poly | Y | Y | Y |
 | rbf |  | Y |  |
 | sigmoid |  | Y | Y |
+
+
+## Scorer
+The Scorer operator is designed to assess model performance through various metrics, tailored to address both regression and classification challenges. It is structured to have uniform input ports, output ports, and parameters for both problem types.
+
+### Input Port
+The input to the Scorer operator is derived from the schema output by the Apply Model operator. Users must specify both the predicted value column and the actual value column. Additionally, users are required to select the metrics by which they wish to evaluate model performance.
+
+### Output Port
+The output of the Scorer operator retains all attributes from the input while modifying the format of the "para" attribute for enhanced clarity. Furthermore, the output table combines the results of all selected metrics, providing an overview of model performance. 
