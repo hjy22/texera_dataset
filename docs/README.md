@@ -118,6 +118,6 @@ The schema from input port need to include the metrics calculated by scorer oper
 
 ### Output
 
-All the attributes from input port will be passed to output port.  
-The user has to choose a metric from the input datasets and we will choose the optimal model by which the prediction performs better. The performance will be evaluated by the metric the user chooses from the input schema.   
+All attributes from the input port will be transmitted to the output port.   
+The user selects a metric from the input datasets, and optimal models are chosen based on which prediction yields superior performance. Evaluation of performance is conducted using the metric selected by the user from the input schema. The output will consist of the filtered result based on the minimum or maximum value among the chosen metric.
 
