@@ -77,4 +77,4 @@ So, this operator is used to do Encoding.
 
 ### Output
 
-If you choose a column named A, this operator will create a column called A_to_number, and output the encoding result in this new column. Other columns will not do any changes.
+If you choose a column named A, this operator will create a column called A_to_number, and output the encoding result in this new column. Other columns will not make any changes.
