@@ -88,13 +88,13 @@ The testing dataset upon which the model is applied, has to be compatible with t
 
 
 ### Input
-#### Model
+**Model**  
 Trained by upstream trainer
 The model was trained by scikit-learn and saved with pickle.  
 Including information of the features that used to train the model in column “features”  
 Including the parameter of the model in column “para”.  
 
-#### Dataset
+**Dataset**  
 The testing dataset that will be performed prediction on with the given model.  
 The testing dataset has to include the attributes used to train this model.  
  
@@ -105,3 +105,19 @@ All the attributes from model input port will be passed to output port.
 The predicted value will be in the output port, the name of this attribute can be assigned by the user, and the default value will be “y_pred”.  
 If the user chooses “Ground Truth In Datasets”, the ground truth values will be passed to the output port.   
 If the user chooses “Predict Probability For Each Class”, the model will predict the probability of one dataset belonging to each class. And the name of this attribute can be assigned by the user, and the default value will be “y_prob”. (not apply to regression model)  
+
+
+## Model Selection
+This operator is used to choose the best models from model tuning loops based on the chosen metric.    
+It is always being used after loop end control block.  
+The scorer operator has to be included in its upstream operators.
+
+### Input
+
+The schema from input port need to include the metrics calculated by scorer operator for either regression tasks or classification tasks.
+
+### Output
+
+All the attributes from input port will be passed to output port.  
+The user has to choose a metric from the input datasets and we will choose the optimal model by which the prediction performs better. The performance will be evaluated by the metric the user chooses from the input schema.   
+
