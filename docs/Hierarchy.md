@@ -22,6 +22,7 @@
     
     Regression Scorer
     
+    Model Selection
 - **Visualization**
     
     ROC Curve
