@@ -1,36 +1,5 @@
 # Texera
-# Hierarchy
 
-- **Preprocessing**
-    
-    Category to Number
-    
-- **Model Training**
-    
-    [KNN Trainer (Classification)](k-nearest-neighbor-trainer)
-    
-    KNN Trainer (Regression)
-    
-    SVC Trainer
-    
-    SVR Trainer
-    
-- **Performance**
-    
-    Apply Model
-    
-    Classification Scorer
-    
-    Regression Scorer
-    
-    Model Selection
-- **Visualization**
-    
-    ROC Curve
-    
-    Confusion Matrix
-    
-    Prediction Visualization
 ## Category to Number
 
 In machine learning, converting strings into enumerated types (numerical values) through a process often referred to as encoding is crucial for several reasons:
